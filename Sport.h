@@ -9,7 +9,11 @@
 class Sport:public Activity
 {
 public:
-    Sport(std::string const &descr, int const &sHour, int const &sMin, int const &eHour, int const &eMin, int const &cal): Activity(descr,sHour,sMin,eHour,eMin),calories(cal){}
+    Sport(std::string const &descr, int const &sHour, int const &sMin, int const &eHour, int const &eMin, int const &cal): Activity(descr,sHour,sMin,eHour,eMin),calories(cal)
+    {
+        if (cal < 0)
+            throw std::invalid_argument( "Calories must be positive");
+    }
     int getCalories() const {return calories;}
     void setCalories(int const &cal) {calories = cal;}
 private:
