@@ -34,6 +34,7 @@ void Register::print(std::string const &day) const
         if(it->first==day)
         {
             std::cout<<it->second->getDescription()<<std::endl;
+            std::cout<<it->second->getStartHour()<<":"<<it->second->getStartMin()<<" - "<<it->second->getEndHour()<<":"<<it->second->getEndMin()<<std::endl;
         }
     }
 }
