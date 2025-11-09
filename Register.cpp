@@ -8,6 +8,8 @@
 
 void Register::add(std::string const &day,std::shared_ptr<Activity> const &a)
 {
+    if (day!="Monday" && day!="Tuesday" && day!="Wednesday" && day!="Thursday" && day!="Friday" && day!="Saturday" && day!="Sunday")
+        throw std::invalid_argument( "Day must be Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday");
     registry.insert({day,a});
 }
 void Register::remove(std::string const &day,std::shared_ptr<Activity> const &a)
@@ -19,6 +21,7 @@ void Register::remove(std::string const &day,std::shared_ptr<Activity> const &a)
             if(it->second==a)
             {
                 registry.erase(it);
+                std::cout<<"activity removed"<<std::endl;
             }
         }
     }
