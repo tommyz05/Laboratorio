@@ -17,6 +17,7 @@ class Activity
             if (sHour < 0 || sMin < 0 || eHour < 0 || eMin < 0)
                 throw std::invalid_argument( "Time must be positive");
         }
+        virtual ~Activity() = default;
         void setDescription(std::string const &descr) {description = descr;}
         std::string getDescription() const {return description;}
         void setStartHour(int const &hour) {startHour = hour;}

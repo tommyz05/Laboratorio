@@ -15,6 +15,7 @@ public:
     void add(std::string const &day, std::shared_ptr<Activity> const &a);
     void remove(std::string const &day, std::shared_ptr<Activity> const &a);
     void print(std::string const &day) const;
+    const std::multimap<std::string, std::shared_ptr<Activity>>& getRegistry() const {return registry;}
 private:
     std::multimap<std::string, std::shared_ptr<Activity>> registry;
 };
