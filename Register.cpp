@@ -28,18 +28,4 @@ void Register::remove(std::string const &day,std::shared_ptr<Activity> const &a)
         }
     }
 }
-void Register::print(std::string const &day) const
-{
-    for(auto it = registry.begin();it!=registry.end();it++)
-    {
-        std::cout<<"activity done on"<<day<<": "<<std::endl;
-        if(it->first==day)
-        {
-            std::cout<<it->second->getDescription()<<std::endl;
-            std::cout<<it->second->getStartHour()<<":"<<it->second->getStartMin()<<" - "<<it->second->getEndHour()<<":"<<it->second->getEndMin()<<std::endl;
-            if(auto sport=std::dynamic_pointer_cast<Sport>(it->second))
-                std::cout<<"Calories: "<<sport->getCalories()<<std::endl;
-        }
-    }
-}
 
