@@ -1,9 +1,21 @@
-#include <chrono>
-#include <iostream>
-
 #include "Activity.h"
 #include "Sport.h"
 #include "Register.h"
+#include "Window.h"
+#include "wx/wx.h"
+
+class MyApp:public wxApp
+{
+public:
+    Register *regPtr;
+    explicit MyApp(Register *reg):regPtr(reg){}
+    bool OnInit() override
+    {
+        auto *frame=new Window(*regPtr);
+        frame->Show(true);
+        return true;
+    }
+};
 int main()
 {
     std::shared_ptr<Activity> attivita1;
@@ -34,5 +46,10 @@ int main()
     {
         std::cout<<"Error: "<<e.what()<<std::endl;
     }
-    return 0;
+    registry.remove("Monday",sport1);
+
+    wxApp::SetInstance(new MyApp(&registry));
+    int argc = 0;
+    char** argv = nullptr;
+    return wxEntry(argc, argv);
 }
