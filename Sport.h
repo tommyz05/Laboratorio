@@ -15,7 +15,6 @@ public:
             throw std::invalid_argument( "Calories must be positive");
     }
     int getCalories() const {return calories;}
-    void setCalories(int const &cal) {calories = cal;}
 private:
     int calories;
 };

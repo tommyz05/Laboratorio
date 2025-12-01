@@ -18,12 +18,7 @@ class Activity
                 throw std::invalid_argument( "Time must be positive");
         }
         virtual ~Activity() = default;
-        void setDescription(std::string const &descr) {description = descr;}
         std::string getDescription() const {return description;}
-        void setStartHour(int const &hour) {startHour = hour;}
-        void setStartMin(int const &min) {startMin = min;}
-        void setEndHour(int const &hour) {endHour = hour;}
-        void setEndMin(int const &min) {endMin = min;}
         int getStartHour() const {return startHour;}
         int getStartMin() const {return startMin;}
         int getEndHour() const {return endHour;}
