@@ -7,11 +7,11 @@
 class MyApp:public wxApp
 {
 public:
-    Register *regPtr;
-    explicit MyApp(Register *reg):regPtr(reg){}
+    const Register &regRef;
+    explicit MyApp(const Register &reg):regRef(reg){}
     bool OnInit() override
     {
-        auto *frame=new Window(*regPtr);
+        auto *frame=new Window(regRef);
         frame->Show(true);
         return true;
     }
@@ -48,7 +48,7 @@ int main()
     }
     registry.remove("Monday",sport1);
 
-    wxApp::SetInstance(new MyApp(&registry));
+    wxApp::SetInstance(new MyApp(registry));
     int argc = 0;
     char** argv = nullptr;
     return wxEntry(argc, argv);
