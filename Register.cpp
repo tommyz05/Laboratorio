@@ -2,11 +2,7 @@
 // Created by tommy on 08/11/25.
 //
 #include "Register.h"
-
 #include <iostream>
-#include <ostream>
-
-#include "Sport.h"
 
 void Register::add(std::string const &day,std::shared_ptr<Activity> const &a)
 {
