@@ -16,7 +16,8 @@ void Register::add(std::string const &day,std::shared_ptr<Activity> const &a)
 }
 void Register::remove(std::string const &day,std::shared_ptr<Activity> const &a)
 {
-    for(auto it = registry.begin();it!=registry.end();it++)
+    bool removed=false;
+    for(auto it = registry.begin();it!=registry.end() && removed==false;it++)
     {
         if(it->first==day)
         {
@@ -24,6 +25,7 @@ void Register::remove(std::string const &day,std::shared_ptr<Activity> const &a)
             {
                 registry.erase(it);
                 std::cout<<"activity removed"<<std::endl;
+                removed=true;
             }
         }
     }
