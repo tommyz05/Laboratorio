@@ -2,7 +2,7 @@
 // Created by tommy on 09/11/25.
 //
 #include "Window.h"
-
+#include <vector>
 #include "Sport.h"
 
 Window::Window(const Register &reg):wxFrame(nullptr,wxID_ANY,"Activity Register",wxDefaultPosition,wxSize(400,300)), wRegister(reg)
