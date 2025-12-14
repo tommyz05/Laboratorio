@@ -7,7 +7,7 @@
 TEST(SportTest, NegativeCaloriesException)
 {
     EXPECT_THROW({
-        Sport s("",11,0,10,0,-400);
+        Sport s("",10,0,11,0,-400);
     }, std::invalid_argument);
 }
 TEST(SportTest, PositiveCalories)
