@@ -16,6 +16,8 @@ class Activity
                 throw std::invalid_argument( "Start time must be before end time");
             if (sHour < 0 || sMin < 0 || eHour < 0 || eMin < 0)
                 throw std::invalid_argument( "Time must be positive");
+            if (sHour>=24 || eHour>=24 || sMin>=60 || eMin>=60)
+                throw std::invalid_argument( "Hour must be less then 24 and minutes less then 60");
         }
         virtual ~Activity() = default;
         std::string getDescription() const {return description;}
