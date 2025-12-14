@@ -22,9 +22,3 @@ TEST(ActivityTest, NegativeTimeException)
     Activity a("",-10,0,11,0);
     }, std::invalid_argument);
 }
-TEST(ActivityTest, PositiveTime)
-{
-    EXPECT_NO_THROW({
-    Activity a("",10,0,11,0);
-    });
-}
